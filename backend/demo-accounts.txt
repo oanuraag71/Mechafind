@@ -1,0 +1,110 @@
+MechaFind Demo Accounts
+======================
+
+Shared password for every demo account: DemoPass!2026
+
+Demo Users (50)
+--------------
+01. Aarav Sharma | demo.user.01@mechafind.dev | 9000000001 | role=user
+02. Vihaan Mehta | demo.user.02@mechafind.dev | 9000000002 | role=user
+03. Ishaan Reddy | demo.user.03@mechafind.dev | 9000000003 | role=user
+04. Reyansh Kapoor | demo.user.04@mechafind.dev | 9000000004 | role=user
+05. Arjun Verma | demo.user.05@mechafind.dev | 9000000005 | role=user
+06. Aditya Nair | demo.user.06@mechafind.dev | 9000000006 | role=user
+07. Kabir Patel | demo.user.07@mechafind.dev | 9000000007 | role=user
+08. Rohan Rao | demo.user.08@mechafind.dev | 9000000008 | role=user
+09. Kian Iyer | demo.user.09@mechafind.dev | 9000000009 | role=user
+10. Neel Malhotra | demo.user.10@mechafind.dev | 9000000010 | role=user
+11. Aanya Sharma | demo.user.11@mechafind.dev | 9000000011 | role=user
+12. Diya Mehta | demo.user.12@mechafind.dev | 9000000012 | role=user
+13. Myra Reddy | demo.user.13@mechafind.dev | 9000000013 | role=user
+14. Sara Kapoor | demo.user.14@mechafind.dev | 9000000014 | role=user
+15. Anaya Verma | demo.user.15@mechafind.dev | 9000000015 | role=user
+16. Ira Nair | demo.user.16@mechafind.dev | 9000000016 | role=user
+17. Kiara Patel | demo.user.17@mechafind.dev | 9000000017 | role=user
+18. Naina Rao | demo.user.18@mechafind.dev | 9000000018 | role=user
+19. Riya Iyer | demo.user.19@mechafind.dev | 9000000019 | role=user
+20. Tara Malhotra | demo.user.20@mechafind.dev | 9000000020 | role=user
+21. Dev Sharma | demo.user.21@mechafind.dev | 9000000021 | role=user
+22. Rudra Mehta | demo.user.22@mechafind.dev | 9000000022 | role=user
+23. Yash Reddy | demo.user.23@mechafind.dev | 9000000023 | role=user
+24. Om Kapoor | demo.user.24@mechafind.dev | 9000000024 | role=user
+25. Manav Verma | demo.user.25@mechafind.dev | 9000000025 | role=user
+26. Zayan Nair | demo.user.26@mechafind.dev | 9000000026 | role=user
+27. Pranav Patel | demo.user.27@mechafind.dev | 9000000027 | role=user
+28. Atharv Rao | demo.user.28@mechafind.dev | 9000000028 | role=user
+29. Krish Iyer | demo.user.29@mechafind.dev | 9000000029 | role=user
+30. Vivaan Malhotra | demo.user.30@mechafind.dev | 9000000030 | role=user
+31. Siya Sharma | demo.user.31@mechafind.dev | 9000000031 | role=user
+32. Avni Mehta | demo.user.32@mechafind.dev | 9000000032 | role=user
+33. Meera Reddy | demo.user.33@mechafind.dev | 9000000033 | role=user
+34. Navya Kapoor | demo.user.34@mechafind.dev | 9000000034 | role=user
+35. Pari Verma | demo.user.35@mechafind.dev | 9000000035 | role=user
+36. Mira Nair | demo.user.36@mechafind.dev | 9000000036 | role=user
+37. Saanvi Patel | demo.user.37@mechafind.dev | 9000000037 | role=user
+38. Aditi Rao | demo.user.38@mechafind.dev | 9000000038 | role=user
+39. Anika Iyer | demo.user.39@mechafind.dev | 9000000039 | role=user
+40. Ishita Malhotra | demo.user.40@mechafind.dev | 9000000040 | role=user
+41. Aria Sharma | demo.user.41@mechafind.dev | 9000000041 | role=user
+42. Tanvi Mehta | demo.user.42@mechafind.dev | 9000000042 | role=user
+43. Veda Reddy | demo.user.43@mechafind.dev | 9000000043 | role=user
+44. Lavanya Kapoor | demo.user.44@mechafind.dev | 9000000044 | role=user
+45. Pihu Verma | demo.user.45@mechafind.dev | 9000000045 | role=user
+46. Mahika Nair | demo.user.46@mechafind.dev | 9000000046 | role=user
+47. Niharika Patel | demo.user.47@mechafind.dev | 9000000047 | role=user
+48. Ritika Rao | demo.user.48@mechafind.dev | 9000000048 | role=user
+49. Suhani Iyer | demo.user.49@mechafind.dev | 9000000049 | role=user
+50. Trisha Malhotra | demo.user.50@mechafind.dev | 9000000050 | role=user
+
+Demo Mechanics (50)
+-------------------
+01. Marcus Kapoor | demo.mechanic.01@mechafind.dev | 9555000001 | Engine Diagnostics | Bengaluru | role=mechanic
+02. Adrian Verma | demo.mechanic.02@mechafind.dev | 9555000002 | Electrical Systems | Hyderabad | role=mechanic
+03. Noah Nair | demo.mechanic.03@mechafind.dev | 9555000003 | Transmission Repair | Mumbai | role=mechanic
+04. Daniel Patel | demo.mechanic.04@mechafind.dev | 9555000004 | Performance Tuning | Chennai | role=mechanic
+05. Luca Rao | demo.mechanic.05@mechafind.dev | 9555000005 | Brake and Suspension | Pune | role=mechanic
+06. Sofia Iyer | demo.mechanic.06@mechafind.dev | 9555000006 | AC and Climate Control | Delhi | role=mechanic
+07. Nina Malhotra | demo.mechanic.07@mechafind.dev | 9555000007 | Luxury Vehicle Service | Ahmedabad | role=mechanic
+08. Clara Sharma | demo.mechanic.08@mechafind.dev | 9555000008 | Roadside Rescue | Kolkata | role=mechanic
+09. Ethan Mehta | demo.mechanic.09@mechafind.dev | 9555000009 | Hybrid Systems | Jaipur | role=mechanic
+10. Mason Reddy | demo.mechanic.10@mechafind.dev | 9555000010 | General Auto Repair | Kochi | role=mechanic
+11. Aiden Kapoor | demo.mechanic.11@mechafind.dev | 9555000011 | Engine Diagnostics | Bengaluru | role=mechanic
+12. Logan Verma | demo.mechanic.12@mechafind.dev | 9555000012 | Electrical Systems | Hyderabad | role=mechanic
+13. Miles Nair | demo.mechanic.13@mechafind.dev | 9555000013 | Transmission Repair | Mumbai | role=mechanic
+14. Leo Patel | demo.mechanic.14@mechafind.dev | 9555000014 | Performance Tuning | Chennai | role=mechanic
+15. Owen Rao | demo.mechanic.15@mechafind.dev | 9555000015 | Brake and Suspension | Pune | role=mechanic
+16. Hudson Iyer | demo.mechanic.16@mechafind.dev | 9555000016 | AC and Climate Control | Delhi | role=mechanic
+17. Ezra Malhotra | demo.mechanic.17@mechafind.dev | 9555000017 | Luxury Vehicle Service | Ahmedabad | role=mechanic
+18. Theo Sharma | demo.mechanic.18@mechafind.dev | 9555000018 | Roadside Rescue | Kolkata | role=mechanic
+19. Julian Mehta | demo.mechanic.19@mechafind.dev | 9555000019 | Hybrid Systems | Jaipur | role=mechanic
+20. Caleb Reddy | demo.mechanic.20@mechafind.dev | 9555000020 | General Auto Repair | Kochi | role=mechanic
+21. Ava Kapoor | demo.mechanic.21@mechafind.dev | 9555000021 | Engine Diagnostics | Bengaluru | role=mechanic
+22. Maya Verma | demo.mechanic.22@mechafind.dev | 9555000022 | Electrical Systems | Hyderabad | role=mechanic
+23. Lena Nair | demo.mechanic.23@mechafind.dev | 9555000023 | Transmission Repair | Mumbai | role=mechanic
+24. Ruby Patel | demo.mechanic.24@mechafind.dev | 9555000024 | Performance Tuning | Chennai | role=mechanic
+25. Ella Rao | demo.mechanic.25@mechafind.dev | 9555000025 | Brake and Suspension | Pune | role=mechanic
+26. Jade Iyer | demo.mechanic.26@mechafind.dev | 9555000026 | AC and Climate Control | Delhi | role=mechanic
+27. Zoe Malhotra | demo.mechanic.27@mechafind.dev | 9555000027 | Luxury Vehicle Service | Ahmedabad | role=mechanic
+28. Mila Sharma | demo.mechanic.28@mechafind.dev | 9555000028 | Roadside Rescue | Kolkata | role=mechanic
+29. Layla Mehta | demo.mechanic.29@mechafind.dev | 9555000029 | Hybrid Systems | Jaipur | role=mechanic
+30. Skye Reddy | demo.mechanic.30@mechafind.dev | 9555000030 | General Auto Repair | Kochi | role=mechanic
+31. Cole Kapoor | demo.mechanic.31@mechafind.dev | 9555000031 | Engine Diagnostics | Bengaluru | role=mechanic
+32. Brooks Verma | demo.mechanic.32@mechafind.dev | 9555000032 | Electrical Systems | Hyderabad | role=mechanic
+33. Hayes Nair | demo.mechanic.33@mechafind.dev | 9555000033 | Transmission Repair | Mumbai | role=mechanic
+34. Parker Patel | demo.mechanic.34@mechafind.dev | 9555000034 | Performance Tuning | Chennai | role=mechanic
+35. Roman Rao | demo.mechanic.35@mechafind.dev | 9555000035 | Brake and Suspension | Pune | role=mechanic
+36. Finn Iyer | demo.mechanic.36@mechafind.dev | 9555000036 | AC and Climate Control | Delhi | role=mechanic
+37. Axel Malhotra | demo.mechanic.37@mechafind.dev | 9555000037 | Luxury Vehicle Service | Ahmedabad | role=mechanic
+38. Dylan Sharma | demo.mechanic.38@mechafind.dev | 9555000038 | Roadside Rescue | Kolkata | role=mechanic
+39. Grant Mehta | demo.mechanic.39@mechafind.dev | 9555000039 | Hybrid Systems | Jaipur | role=mechanic
+40. Nolan Reddy | demo.mechanic.40@mechafind.dev | 9555000040 | General Auto Repair | Kochi | role=mechanic
+41. Tessa Kapoor | demo.mechanic.41@mechafind.dev | 9555000041 | Engine Diagnostics | Bengaluru | role=mechanic
+42. Elise Verma | demo.mechanic.42@mechafind.dev | 9555000042 | Electrical Systems | Hyderabad | role=mechanic
+43. Hazel Nair | demo.mechanic.43@mechafind.dev | 9555000043 | Transmission Repair | Mumbai | role=mechanic
+44. Cora Patel | demo.mechanic.44@mechafind.dev | 9555000044 | Performance Tuning | Chennai | role=mechanic
+45. Ivy Rao | demo.mechanic.45@mechafind.dev | 9555000045 | Brake and Suspension | Pune | role=mechanic
+46. Sage Iyer | demo.mechanic.46@mechafind.dev | 9555000046 | AC and Climate Control | Delhi | role=mechanic
+47. Ariel Malhotra | demo.mechanic.47@mechafind.dev | 9555000047 | Luxury Vehicle Service | Ahmedabad | role=mechanic
+48. Nova Sharma | demo.mechanic.48@mechafind.dev | 9555000048 | Roadside Rescue | Kolkata | role=mechanic
+49. Quinn Mehta | demo.mechanic.49@mechafind.dev | 9555000049 | Hybrid Systems | Jaipur | role=mechanic
+50. Rhea Reddy | demo.mechanic.50@mechafind.dev | 9555000050 | General Auto Repair | Kochi | role=mechanic

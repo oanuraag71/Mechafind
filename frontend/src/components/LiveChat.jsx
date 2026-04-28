@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { io } from 'socket.io-client';
-import { motion } from 'framer-motion';
 import { MessageSquare, Send, X } from 'lucide-react';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../context/AuthContext.jsx';
 
 export default function LiveChat({ requestId }) {
   const { user } = useAuth();
@@ -54,11 +53,7 @@ export default function LiveChat({ requestId }) {
       </button>
 
       {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: 40, scale: 0.94 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          className="chat-panel glass-card"
-        >
+        <div className="chat-panel glass-card">
           <div className="chat-header">
             <div>
               <h3>Live Chat</h3>
@@ -92,14 +87,14 @@ export default function LiveChat({ requestId }) {
           <form onSubmit={sendMessage} className="chat-composer">
             <input
               value={input}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={(event) => setInput(event.target.value)}
               placeholder="Type a message..."
             />
             <button type="submit" className="btn-primary chat-send">
               <Send size={16} />
             </button>
           </form>
-        </motion.div>
+        </div>
       )}
     </>
   );

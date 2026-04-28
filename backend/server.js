@@ -8,7 +8,7 @@ require('dotenv').config();
 
 const app = express();
 const server = http.createServer(app);
-const { seedDemoData } = require('./seed/demoData');
+
 const io = new Server(server, {
   cors: { origin: '*', methods: ['GET', 'POST'] }
 });
@@ -42,26 +42,15 @@ io.on('connection', (socket) => {
   });
 });
 
-const { MongoMemoryServer } = require('mongodb-memory-server');
-let mongoServer;
-
-MongoMemoryServer.create().then(mServer => {
-  mongoServer = mServer;
-  const uri = mongoServer.getUri();
-  
-  mongoose.connect(uri)
-    .then(async () => {
-      const demoSeed = await seedDemoData();
-      console.log(demoSeed.seeded ? 'Demo users and mechanics seeded.' : 'Demo seed skipped, existing data found.');
-      console.log('Demo credentials exported to', demoSeed.exportPath);
-      server.listen(process.env.PORT, () =>
-        console.log('Server (with Socket.IO) running on port', process.env.PORT));
-    })
-    .catch(err => {
-      console.error('MongoDB connection error:', err);
-      process.exit(1);
-    });
-});
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/mechafind')
+  .then(() => {
+    server.listen(process.env.PORT || 5000, () =>
+      console.log(`Server (with Socket.IO) running on port ${process.env.PORT || 5000}`));
+  })
+  .catch(err => {
+    console.error('MongoDB connection error:', err);
+    process.exit(1);
+  });
 
 mongoose.connection.on('error', err => {
   console.error('MongoDB connection error:', err);

@@ -1,107 +1,80 @@
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Eye, EyeOff, LoaderCircle, ShieldCheck, Sparkles } from 'lucide-react';
-import { useAuth } from '../context/AuthContext';
+import { Link, useNavigate } from 'react-router-dom';
+import { Eye, EyeOff, LoaderCircle } from 'lucide-react';
+import { AuthIntro, FormField } from '../components/ui';
+import { useAuth } from '../context/AuthContext.jsx';
 import api from '../api/axios';
 
 export default function LoginPage() {
   const [form, setForm] = useState({ email: '', password: '' });
   const [loading, setLoading] = useState(false);
   const [showPwd, setShowPwd] = useState(false);
-  const [errorShake, setErrorShake] = useState(false);
+  const [error, setError] = useState('');
   const { login } = useAuth();
-  const nav = useNavigate();
+  const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     setLoading(true);
+    setError('');
+
     try {
       const { data } = await api.post('/auth/login', form);
       login(data.user, data.token);
-      nav(data.user.role === 'mechanic' ? '/mechanic/dashboard' : '/dashboard');
+      navigate(data.user.role === 'mechanic' ? '/mechanic/dashboard' : '/dashboard');
     } catch {
-      setErrorShake(true);
-      setTimeout(() => setErrorShake(false), 500);
+      setError('Unable to sign in. Please check your email and password.');
       setLoading(false);
     }
   };
 
   return (
-    <div className="auth-shell">
-      <section className="auth-media-panel">
-        <div className="auth-media-overlay" />
-        <div className="brand-scene scene-auth" aria-hidden="true">
-          <div className="scene-backdrop" />
-          <div className="scene-orbit orbit-a" />
-          <div className="scene-arc" />
-          <div className="scene-showcase-card scene-showcase-main">
-            <span>Secure entry</span>
-            <strong>Premium roadside access</strong>
-          </div>
-        </div>
-        <div className="auth-media-copy">
-          <span className="section-kicker">Premium access</span>
-          <h1>Return to a more composed roadside assistance experience.</h1>
-          <p>Sharper hierarchy, bespoke visual language, and calmer spacing give the product a more elevated first impression.</p>
-          <div className="hero-trust-row">
-            <div className="trust-badge">
-              <ShieldCheck size={14} />
-              Secure sign in
-            </div>
-            <div className="trust-badge">
-              <Sparkles size={14} />
-              Refined visual flow
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="auth-layout">
+      <AuthIntro
+        kicker="Welcome back"
+        title="Sign in to manage your requests."
+        description="Drivers can track service requests. Mechanics can respond to active jobs and chat with customers."
+      />
 
-      <section className="auth-form-panel">
-        <motion.div
-          className={`auth-form-card glass-card ${errorShake ? 'shake' : ''}`}
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-        >
-          <span className="section-kicker">Welcome back</span>
-          <h2>Sign in to MechaFind</h2>
-          <p className="auth-form-subtitle">Access your service dashboard, requests, and specialist activity in one place.</p>
+      <section className="auth-panel card">
+        <span className="section-kicker">Login</span>
+        <h2>Access your account</h2>
 
-          <form onSubmit={handleSubmit} className="flex-col">
-            <div className="input-group">
+        <form onSubmit={handleSubmit} className="stack-md">
+          <FormField
+            id="login-email"
+            label="Email"
+            type="email"
+            value={form.email}
+            onChange={(event) => setForm({ ...form, email: event.target.value })}
+            required
+          />
+
+          <FormField id="login-password" label="Password">
+            <div className="password-field">
               <input
-                type="email"
-                placeholder=" "
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
-                required
-              />
-              <label>Email Address</label>
-            </div>
-
-            <div className="input-group password-group">
-              <input
+                id="login-password"
                 type={showPwd ? 'text' : 'password'}
-                placeholder=" "
                 value={form.password}
-                onChange={(e) => setForm({ ...form, password: e.target.value })}
+                onChange={(event) => setForm({ ...form, password: event.target.value })}
                 required
               />
-              <label>Password</label>
-              <button type="button" className="password-toggle" onClick={() => setShowPwd(!showPwd)}>
+              <button type="button" className="icon-button" onClick={() => setShowPwd((current) => !current)}>
                 {showPwd ? <EyeOff size={16} /> : <Eye size={16} />}
               </button>
             </div>
+          </FormField>
 
-            <button type="submit" disabled={loading} className="btn-primary w-full">
-              {loading ? <LoaderCircle size={18} className="spin-forever" /> : 'Enter dashboard'}
-            </button>
-          </form>
+          {error && <p className="form-error">{error}</p>}
 
-          <p className="auth-switch-copy">
-            Do not have an account? <Link to="/register">Register</Link>
-          </p>
-        </motion.div>
+          <button type="submit" disabled={loading} className="btn-primary w-full">
+            {loading ? <LoaderCircle size={18} className="spin-forever" /> : 'Login'}
+          </button>
+        </form>
+
+        <p className="auth-switch-copy">
+          Do not have an account? <Link to="/register">Register</Link>
+        </p>
       </section>
     </div>
   );

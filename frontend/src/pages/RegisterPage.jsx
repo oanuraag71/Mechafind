@@ -1,132 +1,108 @@
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Eye, EyeOff, LoaderCircle, Sparkles, UserRound, Wrench } from 'lucide-react';
-import { useAuth } from '../context/AuthContext';
+import { Link, useNavigate } from 'react-router-dom';
+import { Eye, EyeOff, LoaderCircle, UserRound, Wrench } from 'lucide-react';
+import { AuthIntro, FormField } from '../components/ui';
+import { useAuth } from '../context/AuthContext.jsx';
 import api from '../api/axios';
 
 export default function RegisterPage() {
   const [form, setForm] = useState({ username: '', email: '', password: '', role: 'user' });
   const [loading, setLoading] = useState(false);
   const [showPwd, setShowPwd] = useState(false);
-  const [errorShake, setErrorShake] = useState(false);
+  const [error, setError] = useState('');
   const { login } = useAuth();
-  const nav = useNavigate();
+  const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     setLoading(true);
+    setError('');
+
     try {
       const { data } = await api.post('/auth/register', form);
       login(data.user, data.token);
-      nav(data.user.role === 'mechanic' ? '/mechanic/dashboard' : '/dashboard');
+      navigate(data.user.role === 'mechanic' ? '/mechanic/dashboard' : '/dashboard');
     } catch {
-      setErrorShake(true);
-      setTimeout(() => setErrorShake(false), 500);
+      setError('Unable to create the account right now.');
       setLoading(false);
     }
   };
 
   return (
-    <div className="auth-shell">
-      <section className="auth-media-panel">
-        <div className="auth-media-overlay" />
-        <div className="brand-scene scene-register" aria-hidden="true">
-          <div className="scene-backdrop" />
-          <div className="scene-orbit orbit-b" />
-          <div className="scene-gridplane" />
-          <div className="scene-showcase-card scene-showcase-main">
-            <span>Join the network</span>
-            <strong>Elite service starts here</strong>
-          </div>
+    <div className="auth-layout">
+      <AuthIntro
+        kicker="Create account"
+        title="Join as a driver or mechanic."
+        description="Pick your role once, create the account, and continue to the dashboard that matches your workflow."
+      />
+
+      <section className="auth-panel card">
+        <span className="section-kicker">Register</span>
+        <h2>Start with MechaFind</h2>
+
+        <div className="role-toggle">
+          <button
+            type="button"
+            onClick={() => setForm({ ...form, role: 'user' })}
+            className={form.role === 'user' ? 'role-option active' : 'role-option'}
+          >
+            <UserRound size={16} />
+            Driver
+          </button>
+          <button
+            type="button"
+            onClick={() => setForm({ ...form, role: 'mechanic' })}
+            className={form.role === 'mechanic' ? 'role-option active' : 'role-option'}
+          >
+            <Wrench size={16} />
+            Mechanic
+          </button>
         </div>
-        <div className="auth-media-copy">
-          <span className="section-kicker">Join the network</span>
-          <h1>Create your account through a sharper, more premium onboarding flow.</h1>
-          <p>The signup journey now has clearer role selection, bespoke brand visuals, and stronger visual structure.</p>
-        </div>
-      </section>
 
-      <section className="auth-form-panel">
-        <motion.div
-          className={`auth-form-card glass-card ${errorShake ? 'shake' : ''}`}
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-        >
-          <span className="section-kicker">Create account</span>
-          <h2>Get started with MechaFind</h2>
-          <p className="auth-form-subtitle">Choose whether you are requesting assistance or delivering it.</p>
+        <form onSubmit={handleSubmit} className="stack-md">
+          <FormField
+            id="register-name"
+            label="Full name"
+            type="text"
+            value={form.username}
+            onChange={(event) => setForm({ ...form, username: event.target.value })}
+            required
+          />
 
-          <div className="role-toggle">
-            <button
-              type="button"
-              onClick={() => setForm({ ...form, role: 'user' })}
-              className={form.role === 'user' ? 'role-option active' : 'role-option'}
-            >
-              <UserRound size={16} />
-              Vehicle owner
-            </button>
-            <button
-              type="button"
-              onClick={() => setForm({ ...form, role: 'mechanic' })}
-              className={form.role === 'mechanic' ? 'role-option active' : 'role-option'}
-            >
-              <Wrench size={16} />
-              Mechanic
-            </button>
-          </div>
+          <FormField
+            id="register-email"
+            label="Email"
+            type="email"
+            value={form.email}
+            onChange={(event) => setForm({ ...form, email: event.target.value })}
+            required
+          />
 
-          <div className="selected-role-note">
-            <Sparkles size={14} />
-            Signing up as <strong>{form.role === 'user' ? 'Vehicle Owner' : 'Mechanic'}</strong>
-          </div>
-
-          <form onSubmit={handleSubmit} className="flex-col">
-            <div className="input-group">
+          <FormField id="register-password" label="Password">
+            <div className="password-field">
               <input
-                type="text"
-                placeholder=" "
-                value={form.username}
-                onChange={(e) => setForm({ ...form, username: e.target.value })}
-                required
-              />
-              <label>Full Name</label>
-            </div>
-
-            <div className="input-group">
-              <input
-                type="email"
-                placeholder=" "
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
-                required
-              />
-              <label>Email Address</label>
-            </div>
-
-            <div className="input-group password-group">
-              <input
+                id="register-password"
                 type={showPwd ? 'text' : 'password'}
-                placeholder=" "
                 value={form.password}
-                onChange={(e) => setForm({ ...form, password: e.target.value })}
+                onChange={(event) => setForm({ ...form, password: event.target.value })}
                 required
               />
-              <label>Password</label>
-              <button type="button" className="password-toggle" onClick={() => setShowPwd(!showPwd)}>
+              <button type="button" className="icon-button" onClick={() => setShowPwd((current) => !current)}>
                 {showPwd ? <EyeOff size={16} /> : <Eye size={16} />}
               </button>
             </div>
+          </FormField>
 
-            <button type="submit" disabled={loading} className="btn-primary w-full">
-              {loading ? <LoaderCircle size={18} className="spin-forever" /> : 'Create membership'}
-            </button>
-          </form>
+          {error && <p className="form-error">{error}</p>}
 
-          <p className="auth-switch-copy">
-            Already have an account? <Link to="/login">Log in</Link>
-          </p>
-        </motion.div>
+          <button type="submit" disabled={loading} className="btn-primary w-full">
+            {loading ? <LoaderCircle size={18} className="spin-forever" /> : 'Create account'}
+          </button>
+        </form>
+
+        <p className="auth-switch-copy">
+          Already have an account? <Link to="/login">Login</Link>
+        </p>
       </section>
     </div>
   );
